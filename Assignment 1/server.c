@@ -64,7 +64,7 @@ int main(int argc, char const *argv[])
     pid = fork();
     if (pid == 0)
     {
-    	setuid(getpwnam("nobody")->pw_id);
+    	setuid(getpwnam("nobody")->pw_uid);
     	printf("Uid after dropping privilege = %d\n", getuid());
     	valread = read( new_socket , buffer, 1024);
     	printf("%s\n",buffer );
